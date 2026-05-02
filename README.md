@@ -1,110 +1,43 @@
-# Terraform AWS Infrastructure
+☁️ Terraform AWS Infrastructure Automation
 
-This project provisions AWS infrastructure using **Terraform modules**.  
-It demonstrates Infrastructure as Code (IaC) practices for deploying networking and compute resources in AWS.
-
----
-
-## Architecture
-
-The Terraform configuration deploys the following infrastructure:
-
-- VPC
-- Public Subnet
-- Internet Gateway
-- Route Table
-- Security Group
-- EC2 Instance
-
-### Infrastructure Flow
-
-Terraform Root Module
-
-│
-├── VPC Module
-│ ├── VPC
-│ ├── Subnet
-│ ├── Internet Gateway
-│ └── Route Table
-│
-└── EC2 Module
-├── Security Group
-└── EC2 Instance
+## 🧩 Project Overview
+This project demonstrates Infrastructure as Code (IaC) using Terraform to provision AWS resources in a scalable and automated way.
 
 ---
 
-## Project Structure
-terraform-aws-infrastructure
-│
-├── backend.tf
-├── provider.tf
-├── main.tf
-├── variables.tf
-├── outputs.tf
-│
-└── modules
-├── vpc
-│ ├── main.tf
-│ ├── variables.tf
-│ └── outputs.tf
-│
-└── ec2
-├── main.tf
-├── variables.tf
-└── outputs.tf
+## 🏗️ Architecture
+The infrastructure includes:
 
+- VPC with subnets  
+- EC2 instances for compute  
+- Security groups for controlled access  
+- Remote state stored in S3 with DynamoDB locking  
 
 ---
 
-## Terraform Workflow
-
-Initialize Terraform
-
-
-terraform init
-
-
-Review infrastructure plan
-
-
-terraform plan
-
-
-Apply infrastructure
-
-
-terraform apply
-
-
-Destroy infrastructure
-
-
-terraform destroy
-
+## ⚙️ Tech Stack
+- **Terraform** → Infrastructure provisioning  
+- **AWS** → Cloud platform (EC2, VPC, IAM, S3, DynamoDB)  
 
 ---
 
-## Remote Backend
-
-Terraform state is stored remotely using:
-
-- **Amazon S3** for state storage
-- **DynamoDB** for state locking
-
-This ensures safe collaboration and prevents concurrent infrastructure changes.
+## 🚀 Key Features
+- Automated provisioning of AWS infrastructure  
+- Modular Terraform configuration for reusability  
+- Remote state management using **S3 and DynamoDB**  
+- Secure infrastructure using security groups  
 
 ---
 
-## Skills Demonstrated
-
-- Terraform Modules
-- AWS VPC Networking
-- Infrastructure as Code
-- Remote Terraform State
-- Terraform Lifecycle Management
+## 🌐 Networking Design
+- Configured VPC with subnets  
+- Defined routing and access control  
+- Enabled secure communication between components  
 
 ---
 
-## Screenshots
-
-Deployment screenshots are included in the repository documentation.
+## 🔄 Workflow
+1. Write Terraform configuration files  
+2. Initialize Terraform  
+   ```bash
+   terraform init
